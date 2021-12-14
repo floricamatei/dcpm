@@ -38,5 +38,6 @@ In realizarea fiecarui microserviciu am aplicat principiile arhitecturii hexagon
 
 ### Concluzii si intrebari
 Merita efortul abordari arhitecturii bazate pe microservici?
+
 Merita efortul unei arhitecturi hexagonale?
 
