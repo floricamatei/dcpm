@@ -3,7 +3,7 @@
 ### Prefata
 
 In prezentarea de azi m-am inspirat / influentat din:
-- prezentarea "Go Tech event - Hexagonal Architecture" care are link in mailul trimis de Bogdan Ardeleanu.
+- prezentarea "Hexagonal Architecture" care are link in mailul trimis de Bogdan Ardeleanu.
 - prezentarea lui Gabi Vaduva cu docker
 - prezentarea lui George cu Open API
 - un curs a lui Thorben Janssen.
@@ -24,7 +24,7 @@ Reguli de baza pentru persistenta datelor:
 ### API Composition Pattern
 Paternul API Composition este aplicabil in operatiile de citire ale nivelului de persistenta.
 
-![]()
+![](https://github.com/dgpavel/dcpm/blob/main/API%20Composition/api-composition.jpg)
 
 - OrderInfoService trebuie sa stie adresa IP si numarul de port la celelalte 3 servicii.
 - daca oricare din OrderService, BookService, InventoryService, ReviewService pica atunci si OrderInfoService pica
@@ -34,7 +34,7 @@ Paternul API Composition este aplicabil in operatiile de citire ale nivelului de
 ### Hexagonal Architecture
 In realizarea fiecarui microserviciu am aplicat principiile arhitecturii hexagonale.
 
-![]()
+![](https://github.com/dgpavel/dcpm/blob/main/API%20Composition/bookservice-hexagonal.jpg)
 
 ### Concluzii si intrebari
 Merita efortul abordari arhitecturii bazate pe microservici?
