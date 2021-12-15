@@ -14,7 +14,7 @@ M-am inspirat / influentat din:
 
 Se gasesc numeroase articole pe tema Monoliths vs Microservices.
 
-Reguli de baza pentru persistenta datelor:
+Microservices - Reguli de baza  pentru persistenta datelor:
  1. Fiecare serviciu trebuie să aibă propria sa bază de date.
 
  2. Un serviciu își cunoaște doar propria bază de date.
@@ -42,4 +42,6 @@ In realizarea fiecarui microserviciu am aplicat principiile arhitecturii hexagon
 Merita efortul abordari arhitecturii bazate pe microservici?
 
 Merita efortul unei arhitecturi hexagonale?
+
+There is no Kubernetes, no microservices, no hexagonal architecture, no DDD, no CQRS, no Event Sourcing, no Kafka, and not any of the popular NoSQL databases. Just a three-tier monolith that uses MySQL. https://vladmihalcea.com/revogain-software-architecture/
 
