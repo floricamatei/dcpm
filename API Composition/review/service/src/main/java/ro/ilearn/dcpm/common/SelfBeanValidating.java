@@ -3,7 +3,7 @@ package ro.ilearn.dcpm.common;
 import javax.validation.*;
 import java.util.Set;
 
-public interface SelfValidating<T> {
+public interface SelfBeanValidating<T> {
 
     ValidatorFactory factory = Validation.buildDefaultValidatorFactory();
 
@@ -11,7 +11,7 @@ public interface SelfValidating<T> {
      * Evaluates all Bean Validations on the attributes of this instance.
      */
     @SuppressWarnings("unchecked")
-    default void validateSelf() {
+    default void validateSelfBean() {
         Validator validator = factory.getValidator();
         Set<ConstraintViolation<T>> violations = validator.validate((T) this);
         if (!violations.isEmpty()) {

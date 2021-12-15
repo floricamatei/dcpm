@@ -2,14 +2,14 @@ package ro.ilearn.dcpm.book.service.domain;
 
 import lombok.Getter;
 import lombok.Setter;
-import ro.ilearn.dcpm.common.SelfValidating;
+import ro.ilearn.dcpm.common.SelfBeanValidating;
 
 import javax.validation.constraints.NotBlank;
 import java.util.List;
 
 @Getter
 @Setter
-public class Book implements SelfValidating<Book> {
+public class Book implements SelfBeanValidating<Book> {
     private Long id;
     @NotBlank
     private String title;

@@ -2,11 +2,10 @@ package ro.ilearn.dcpm.book.service.domain;
 
 import lombok.Builder;
 import lombok.Getter;
-import ro.ilearn.dcpm.common.SelfValidating;
 
 @Getter
 @Builder
-public class Review implements SelfValidating<Review> {
+public class Review {
     private Long id;
     private String message;
 

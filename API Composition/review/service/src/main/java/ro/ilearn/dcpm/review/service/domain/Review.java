@@ -2,14 +2,14 @@ package ro.ilearn.dcpm.review.service.domain;
 
 import lombok.Builder;
 import lombok.Getter;
-import ro.ilearn.dcpm.common.SelfValidating;
+import ro.ilearn.dcpm.common.SelfBeanValidating;
 
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 
 @Getter
 @Builder
-public class Review implements SelfValidating<Review> {
+public class Review implements SelfBeanValidating<Review> {
     private Long id;
     @NotBlank
     private String message;
