@@ -7,6 +7,7 @@ M-am inspirat / influentat din:
 - diverse articole despre "Hexagonal Architecture with Java and Spring" (vezi si link in mailul trimis de Bogdan Ardeleanu).
 - prezentarea lui Gabi Vaduva despre Docker.
 - prezentarea lui George despre REST API Documentation Using OpenAPI
+- desenele au fost realizate utilizand https://app.diagrams.net/
 
 
 ### Monoliths vs Microservices
