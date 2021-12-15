@@ -36,6 +36,6 @@ public class BookController {
     @GetMapping(path = "/{bookId}")
     public BookViewResponse getBook(@PathVariable Long bookId) {
         logger.info("Done ... returning book now");
-        return bookViewResponseMapper.toBookViewResponse(viewBookWithReviewsPort.getBookWithReviews(bookId));
+        return bookViewResponseMapper.toBookViewResponse(viewBookWithReviewsPort.execute(bookId));
     }
 }

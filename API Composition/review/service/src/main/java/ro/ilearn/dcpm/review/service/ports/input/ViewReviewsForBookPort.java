@@ -5,5 +5,5 @@ import ro.ilearn.dcpm.review.service.domain.Review;
 import java.util.List;
 
 public interface ViewReviewsForBookPort {
-    List<Review> getReviewsForBook(Long bookId);
+    List<Review> execute(Long bookId);
 }

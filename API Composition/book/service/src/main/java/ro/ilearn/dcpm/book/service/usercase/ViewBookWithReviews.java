@@ -14,7 +14,7 @@ public class ViewBookWithReviews implements ViewBookWithReviewsPort {
     private final ReviewQueryPort reviewQueryPort;
 
     @Override
-    public Book getBookWithReviews(Long bookId) {
+    public Book execute(Long bookId) {
         if (bookId == null) {
             throw new IllegalArgumentException();
         }

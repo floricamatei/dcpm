@@ -26,6 +26,6 @@ public class ReviewController {
     @GetMapping(path = "/book/{bookId}")
     public List<ReviewForBook> getReviewsForBook(@PathVariable Long bookId) {
         logger.info("Done ... returning reviews now");
-        return reviewForBookMapper.toReviewForBook(viewReviewsForBookPort.getReviewsForBook(bookId));
+        return reviewForBookMapper.toReviewForBook(viewReviewsForBookPort.execute(bookId));
     }
 }

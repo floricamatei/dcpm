@@ -12,7 +12,7 @@ public class ViewReviewsForBook implements ViewReviewsForBookPort {
     private final ReviewQueryPort reviewQueryPort;
 
     @Override
-    public List<Review> getReviewsForBook(Long bookId) {
+    public List<Review> execute(Long bookId) {
         if (bookId == null) {
             throw new IllegalArgumentException();
         }
