@@ -43,5 +43,5 @@ Merita efortul abordari arhitecturii bazate pe microservici?
 
 Merita efortul unei arhitecturi hexagonale?
 
-There is no Kubernetes, no microservices, no hexagonal architecture, no DDD, no CQRS, no Event Sourcing, no Kafka, and not any of the popular NoSQL databases. Just a three-tier monolith that uses MySQL. https://vladmihalcea.com/revogain-software-architecture/
+"There is no Kubernetes, no microservices, no hexagonal architecture, no DDD, no CQRS, no Event Sourcing, no Kafka, and not any of the popular NoSQL databases. Just a three-tier monolith that uses MySQL." - https://vladmihalcea.com/revogain-software-architecture/
 
