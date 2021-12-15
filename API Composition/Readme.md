@@ -1,8 +1,8 @@
 ## Microservices - API Composition Pattern
 
-### Prefata
+### Bibliografie
 
-In prezentarea de azi m-am inspirat / influentat din:
+M-am inspirat / influentat din:
 - un curs "Data and Communication Patterns for Microservices" a lui Thorben Janssen (https://thorben-janssen.com).
 - diverse articole despre "Hexagonal Architecture with Java and Spring" (vezi si link in mailul trimis de Bogdan Ardeleanu).
 - prezentarea lui Gabi Vaduva despre Docker.
