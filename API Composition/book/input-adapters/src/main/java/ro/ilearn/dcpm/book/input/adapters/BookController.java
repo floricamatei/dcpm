@@ -1,5 +1,10 @@
 package ro.ilearn.dcpm.book.input.adapters;
 
+import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.media.Content;
+import io.swagger.v3.oas.annotations.media.Schema;
+import io.swagger.v3.oas.annotations.responses.ApiResponse;
+import io.swagger.v3.oas.annotations.responses.ApiResponses;
 import lombok.RequiredArgsConstructor;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -20,7 +25,14 @@ public class BookController {
     private final ViewBookWithReviewsPort viewBookWithReviewsPort;
     private final BookViewResponseMapper bookViewResponseMapper;
 
-
+    @Operation(summary = "Get a book by its id")
+    @ApiResponses(value = {
+            @ApiResponse(
+                    responseCode = "200",
+                    description = "Found the book",
+                    content = {@Content(mediaType = "application/json", schema = @Schema(implementation = BookViewResponse.class))}),
+            @ApiResponse(responseCode = "400", description = "Invalid id supplied", content = @Content),
+    })
     @GetMapping(path = "/{bookId}")
     public BookViewResponse getBook(@PathVariable Long bookId) {
         logger.info("Done ... returning book now");

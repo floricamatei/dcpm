@@ -11,6 +11,11 @@
 
     <artifactId>input-adapters</artifactId>
 
+    <properties>
+        <springdoc-openapi-ui.version>1.6.0</springdoc-openapi-ui.version>
+        <springdoc-openapi-maven-plugin.version>1.3</springdoc-openapi-maven-plugin.version>
+    </properties>
+
     <dependencies>
         <!-- modulul service -->
         <dependency>
@@ -31,6 +36,12 @@
         <dependency>
             <groupId>org.mapstruct</groupId>
             <artifactId>mapstruct</artifactId>
+        </dependency>
+        <!-- springdoc-openapi-ui -->
+        <dependency>
+            <groupId>org.springdoc</groupId>
+            <artifactId>springdoc-openapi-ui</artifactId>
+            <version>${springdoc-openapi-ui.version}</version>
         </dependency>
     </dependencies>
 

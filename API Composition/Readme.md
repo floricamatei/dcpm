@@ -3,10 +3,11 @@
 ### Prefata
 
 In prezentarea de azi m-am inspirat / influentat din:
-- prezentarea "Hexagonal Architecture" care are link in mailul trimis de Bogdan Ardeleanu.
-- prezentarea lui Gabi Vaduva cu docker
-- prezentarea lui George cu Open API
-- un curs a lui Thorben Janssen.
+- un curs "Data and Communication Patterns for Microservices" a lui Thorben Janssen (https://thorben-janssen.com).
+- diverse articole despre "Hexagonal Architecture with Java and Spring" (vezi si link in mailul trimis de Bogdan Ardeleanu).
+- prezentarea lui Gabi Vaduva despre Docker.
+- prezentarea lui George despre REST API Documentation Using OpenAPI
+
 
 ### Monoliths vs Microservices
 
