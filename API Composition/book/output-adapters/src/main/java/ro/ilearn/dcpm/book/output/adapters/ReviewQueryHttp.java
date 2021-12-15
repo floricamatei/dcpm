@@ -14,7 +14,6 @@ import ro.ilearn.dcpm.book.service.ports.output.ReviewQueryPort;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
-import java.util.stream.Collectors;
 
 @Component
 @ConditionalOnProperty(name = "book.review.restapi", havingValue = "on", matchIfMissing = true)
@@ -44,7 +43,7 @@ public class ReviewQueryHttp implements ReviewQueryPort {
         if (reviews != null) {
             return Arrays.stream(reviews)
                     .map(object -> mapper.convertValue(object, Review.class))
-                    .collect(Collectors.toList());
+                    .toList();
         }
         return new ArrayList<>();
     }
