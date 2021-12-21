@@ -23,6 +23,6 @@ public class ViewBookWithReviews implements ViewBookWithReviewsPort {
             Book book = value.get();
             book.setReviews(reviewQueryPort.getReviewsForBook(bookId));
         }
-        return value.orElse(new Book());
+        return value.orElse(Book.builder().build());
     }
 }
