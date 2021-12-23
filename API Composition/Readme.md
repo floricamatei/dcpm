@@ -3,11 +3,9 @@
 ### Bibliografie
 
 M-am inspirat / influentat din:
-- un curs "Data and Communication Patterns for Microservices" a lui Thorben Janssen (https://thorben-janssen.com).
-- diverse articole despre "Hexagonal Architecture with Java and Spring" (vezi si link in mailul trimis de Bogdan Ardeleanu).
-- prezentarea lui Gabi Vaduva despre Docker.
-- prezentarea lui George despre REST API Documentation Using OpenAPI
-- desenele au fost realizate utilizand https://app.diagrams.net/ recomandat de Stefan si Sorin
+- cursul "Data and Communication Patterns for Microservices" a lui Thorben Janssen (https://thorben-janssen.com).
+- diverse articole despre "Hexagonal Architecture".
+- diagramele au fost realizate utilizand https://app.diagrams.net/
 
 
 ### Monoliths vs Microservices
@@ -21,7 +19,7 @@ Microservices - Reguli de baza  pentru persistenta datelor:
 
  3. Nu se folosesc transactii distribuite
  
- 4. De fiecare dată când actualizați microserviciul, trebuie să actualizați automat baza de date.
+ 4. De fiecare dată când actualizați microserviciul, trebuie să actualizați automat baza de date daca este cazul.
 
 ### API Composition Pattern
 Paternul API Composition este aplicabil in operatiile de citire ale nivelului de persistenta.
@@ -31,7 +29,7 @@ Paternul API Composition este aplicabil in operatiile de citire ale nivelului de
 - OrderInfoService trebuie sa stie adresa IP si numarul de port la celelalte 3 servicii.
 - daca oricare din OrderService, BookService, InventoryService, ReviewService pica atunci si OrderInfoService pica
 - daca oricare din OrderService, BookService, InventoryService, ReviewService raspunde greu si OrderInfoService va raspunde greu
-
+- BookService nu este optimizat pentru nevoile lui OrderInfoService (review-urile nu sunt necesare)
 
 ### Hexagonal Architecture
 In realizarea fiecarui microserviciu am aplicat principiile arhitecturii hexagonale.
