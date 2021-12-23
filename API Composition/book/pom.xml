@@ -10,17 +10,15 @@
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
 
-    <groupId>ro.ilearn.dcpm.book</groupId>
+    <groupId>ro.ilearn.dcpm</groupId>
     <artifactId>book-parent</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <description>A service that manages the books in the online store</description>
     <packaging>pom</packaging>
 
     <modules>
-        <module>service</module>
-        <module>output-adapters</module>
-        <module>input-adapters</module>
-        <module>boot-application</module>
+        <module>book-core</module>
+        <module>book-outside</module>
     </modules>
 
     <properties>
@@ -28,24 +26,16 @@
         <maven.compiler.source>17</maven.compiler.source>
         <maven.compiler.target>17</maven.compiler.target>
         <mapstruct.version>1.4.2.Final</mapstruct.version>
+        <springdoc-openapi-ui.version>1.6.0</springdoc-openapi-ui.version>
+        <spring-cloud-starter-openfeign.version>3.1.0</spring-cloud-starter-openfeign.version>
     </properties>
 
     <dependencyManagement>
         <dependencies>
             <!-- Modulele -->
             <dependency>
-                <groupId>ro.ilearn.dcpm.book</groupId>
-                <artifactId>service</artifactId>
-                <version>0.0.1-SNAPSHOT</version>
-            </dependency>
-            <dependency>
-                <groupId>ro.ilearn.dcpm.book</groupId>
-                <artifactId>output-adapters</artifactId>
-                <version>0.0.1-SNAPSHOT</version>
-            </dependency>
-            <dependency>
-                <groupId>ro.ilearn.dcpm.book</groupId>
-                <artifactId>input-adapters</artifactId>
+                <groupId>ro.ilearn.dcpm</groupId>
+                <artifactId>book-core</artifactId>
                 <version>0.0.1-SNAPSHOT</version>
             </dependency>
             <!-- Lombok -->
@@ -60,6 +50,18 @@
                 <groupId>org.mapstruct</groupId>
                 <artifactId>mapstruct</artifactId>
                 <version>${mapstruct.version}</version>
+            </dependency>
+            <!-- springdoc-openapi-ui -->
+            <dependency>
+                <groupId>org.springdoc</groupId>
+                <artifactId>springdoc-openapi-ui</artifactId>
+                <version>${springdoc-openapi-ui.version}</version>
+            </dependency>
+            <!-- spring-cloud-starter-openfeign -->
+            <dependency>
+                <groupId>org.springframework.cloud</groupId>
+                <artifactId>spring-cloud-starter-openfeign</artifactId>
+                <version>${spring-cloud-starter-openfeign.version}</version>
             </dependency>
         </dependencies>
     </dependencyManagement>
