@@ -1,9 +1,14 @@
 package ro.ilearn.dcpm.inventory.adapter.persistence;
 
+import lombok.Getter;
+import lombok.Setter;
+
 import javax.persistence.*;
 
 @Entity
 @Table(name = "inventory")
+@Getter
+@Setter
 public class InventoryJpaEntity {
 
     @Id
@@ -19,28 +24,16 @@ public class InventoryJpaEntity {
 
     private int quantity;
 
-    public Long getId() {
-        return id;
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof InventoryJpaEntity)) return false;
+        return id != null && id.equals(((InventoryJpaEntity) o).id);
     }
 
-    public int getVersion() {
-        return version;
-    }
-
-    public int getQuantity() {
-        return quantity;
-    }
-
-    public void setQuantity(final int quantity) {
-        this.quantity = quantity;
-    }
-
-    public Long getBookId() {
-        return bookId;
-    }
-
-    public void setBookId(Long bookId) {
-        this.bookId = bookId;
+    @Override
+    public int hashCode() {
+        return 31;
     }
 
 }

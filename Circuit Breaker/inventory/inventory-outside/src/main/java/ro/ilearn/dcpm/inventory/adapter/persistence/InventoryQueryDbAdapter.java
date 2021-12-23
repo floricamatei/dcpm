@@ -7,7 +7,7 @@ import ro.ilearn.dcpm.inventory.core.InventoryQueryPort;
 
 @Component
 @RequiredArgsConstructor
-public class InventoryQueryAdapter implements InventoryQueryPort {
+public class InventoryQueryDbAdapter implements InventoryQueryPort {
     private final InventoryRepository inventoryRepository;
     private final InventoryMapper inventoryMapper;
 
