@@ -19,7 +19,7 @@ Microservices - Reguli de baza  pentru persistenta datelor:
 
  3. Nu se folosesc transactii distribuite
  
- 4. De fiecare dată când actualizați microserviciul, trebuie să actualizați automat baza de date daca este cazul.
+ 4. De fiecare dată când actualizați microserviciul, trebuie să actualizați automat baza de date daca este cazul (Liquibase, Flyway).
 
 ### API Composition Pattern
 Paternul API Composition este aplicabil in operatiile de citire ale nivelului de persistenta.
