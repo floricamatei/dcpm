@@ -11,14 +11,14 @@
     </parent>
 
     <groupId>ro.ilearn.dcpm</groupId>
-    <artifactId>book-parent</artifactId>
+    <artifactId>orderinfo-parent</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <description>A service that manages the books in the online store</description>
+    <description>A service that provides aggregated information about an order</description>
     <packaging>pom</packaging>
 
     <modules>
-        <module>book-core</module>
-        <module>book-outside</module>
+        <module>orderinfo-core</module>
+        <module>orderinfo-outside</module>
     </modules>
 
     <properties>
@@ -37,7 +37,7 @@
             <!-- Modulele -->
             <dependency>
                 <groupId>ro.ilearn.dcpm</groupId>
-                <artifactId>book-core</artifactId>
+                <artifactId>orderinfo-core</artifactId>
                 <version>0.0.1-SNAPSHOT</version>
             </dependency>
             <!-- Lombok -->

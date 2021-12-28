@@ -1,7 +1,6 @@
 package ro.ilearn.dcpm.review.adapter.persistence;
 
 import org.mapstruct.Mapper;
-import ro.ilearn.dcpm.review.adapter.persistence.ReviewJpaEntity;
 import ro.ilearn.dcpm.review.core.Review;
 
 import java.util.List;

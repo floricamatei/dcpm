@@ -2,6 +2,10 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
+    <modules>
+        <module>order-core</module>
+        <module>order-outside</module>
+    </modules>
 
     <parent>
         <groupId>org.springframework.boot</groupId>
@@ -11,25 +15,18 @@
     </parent>
 
     <groupId>ro.ilearn.dcpm</groupId>
-    <artifactId>book-parent</artifactId>
+    <artifactId>order-parent</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <description>A service that manages the books in the online store</description>
+    <description>A service that manages the order of an online store</description>
     <packaging>pom</packaging>
 
-    <modules>
-        <module>book-core</module>
-        <module>book-outside</module>
-    </modules>
 
     <properties>
-        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
         <java.version>17</java.version>
         <maven.compiler.source>17</maven.compiler.source>
         <maven.compiler.target>17</maven.compiler.target>
         <mapstruct.version>1.4.2.Final</mapstruct.version>
         <springdoc-openapi-ui.version>1.6.3</springdoc-openapi-ui.version>
-        <spring-cloud-starter-openfeign.version>3.1.0</spring-cloud-starter-openfeign.version>
     </properties>
 
     <dependencyManagement>
@@ -37,7 +34,7 @@
             <!-- Modulele -->
             <dependency>
                 <groupId>ro.ilearn.dcpm</groupId>
-                <artifactId>book-core</artifactId>
+                <artifactId>order-core</artifactId>
                 <version>0.0.1-SNAPSHOT</version>
             </dependency>
             <!-- Lombok -->
@@ -58,12 +55,6 @@
                 <groupId>org.springdoc</groupId>
                 <artifactId>springdoc-openapi-ui</artifactId>
                 <version>${springdoc-openapi-ui.version}</version>
-            </dependency>
-            <!-- spring-cloud-starter-openfeign -->
-            <dependency>
-                <groupId>org.springframework.cloud</groupId>
-                <artifactId>spring-cloud-starter-openfeign</artifactId>
-                <version>${spring-cloud-starter-openfeign.version}</version>
             </dependency>
         </dependencies>
     </dependencyManagement>
