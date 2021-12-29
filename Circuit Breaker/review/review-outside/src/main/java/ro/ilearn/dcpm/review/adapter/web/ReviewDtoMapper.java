@@ -8,7 +8,7 @@ import java.util.List;
 @Mapper(componentModel = "spring")
 public interface ReviewDtoMapper {
 
-    ReviewDto toReviewForBook(Review review);
+    ReviewDto toReviewDto(Review review);
 
-    List<ReviewDto> toReviewForBook(List<Review> review);
+    List<ReviewDto> toReviewDto(List<Review> review);
 }
