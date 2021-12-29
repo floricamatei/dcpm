@@ -1,4 +1,4 @@
-package ro.ilearn.dcpm.review.core;
+package ro.ilearn.dcpm.review.core.domain;
 
 import lombok.Builder;
 import lombok.Getter;

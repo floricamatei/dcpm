@@ -1,11 +1,11 @@
-package ro.ilearn.dcpm.book.core;
+package ro.ilearn.dcpm.review.adapter.web;
 
-import lombok.Builder;
 import lombok.Getter;
+import lombok.Setter;
 
 @Getter
-@Builder
-public class Review {
+@Setter
+public class ReviewDto {
     private Long id;
     private String message;
     private String writtenBy;
