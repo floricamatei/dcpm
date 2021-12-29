@@ -2,7 +2,7 @@ package ro.ilearn.dcpm.book.adapter.web;
 
 import lombok.Getter;
 import lombok.Setter;
-import ro.ilearn.dcpm.book.core.Review;
+import ro.ilearn.dcpm.book.core.domain.Review;
 
 import java.util.List;
 

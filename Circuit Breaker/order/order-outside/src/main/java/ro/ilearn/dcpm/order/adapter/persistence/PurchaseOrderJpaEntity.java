@@ -2,7 +2,7 @@ package ro.ilearn.dcpm.order.adapter.persistence;
 
 import lombok.Getter;
 import lombok.Setter;
-import ro.ilearn.dcpm.order.core.PurchaseOrderState;
+import ro.ilearn.dcpm.order.core.domain.OrderState;
 
 import javax.persistence.*;
 import java.math.BigDecimal;
@@ -23,7 +23,7 @@ public class PurchaseOrderJpaEntity {
     private String customerName;
     private BigDecimal amount;
     @Enumerated
-    private PurchaseOrderState state;
+    private OrderState state;
 
     @Override
     public boolean equals(Object o) {

@@ -7,8 +7,8 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-import ro.ilearn.dcpm.orderinfo.core.OrderInfo;
-import ro.ilearn.dcpm.orderinfo.core.ViewOrderInfoPort;
+import ro.ilearn.dcpm.orderinfo.core.domain.OrderInfo;
+import ro.ilearn.dcpm.orderinfo.core.port.ViewOrderInfoPort;
 
 @RestController
 @RequestMapping(path = "/api/v1/orderinfo")

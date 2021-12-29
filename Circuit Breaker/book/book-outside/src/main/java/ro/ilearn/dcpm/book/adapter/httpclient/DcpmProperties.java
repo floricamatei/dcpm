@@ -10,8 +10,5 @@ import org.springframework.boot.context.properties.ConstructorBinding;
 @ConstructorBinding
 @ConfigurationProperties(value = "dcpm", ignoreUnknownFields = false)
 public class DcpmProperties {
-    private final String reviewApiHost;
-    private final String reviewPath;
-    private final String reviewBookByIdPath;
-
+    private final String reviewApiPath;
 }

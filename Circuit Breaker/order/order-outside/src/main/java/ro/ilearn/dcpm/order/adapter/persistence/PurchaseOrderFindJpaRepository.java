@@ -2,16 +2,16 @@ package ro.ilearn.dcpm.order.adapter.persistence;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Repository;
-import ro.ilearn.dcpm.order.core.PurchaseOrderState;
+import ro.ilearn.dcpm.common.AppConstants;
+import ro.ilearn.dcpm.order.core.domain.Order;
+import ro.ilearn.dcpm.order.core.domain.OrderPosition;
+import ro.ilearn.dcpm.order.core.domain.OrderState;
 
 import javax.persistence.EntityManager;
 import javax.persistence.Tuple;
 import javax.persistence.criteria.*;
 import java.math.BigDecimal;
-import java.util.ArrayList;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Set;
+import java.util.*;
 
 @Repository
 @RequiredArgsConstructor
@@ -20,7 +20,10 @@ public class PurchaseOrderFindJpaRepository implements PurchaseOrderFindReposito
     private final EntityManager em;
 
     @Override
-    public PurchaseOrderrDto getOrderWithPositions(Long orderId) {
+    public Optional<Order> getOrderWithPositions(Long orderId) {
+        if (orderId == null) {
+            throw new IllegalArgumentException(String.format(AppConstants.MUST_NOT_BE_NULL, " orderId"));
+        }
         CriteriaBuilder cb = em.getCriteriaBuilder();
         CriteriaQuery<Tuple> cq = cb.createQuery(Tuple.class);
         // From
@@ -41,8 +44,11 @@ public class PurchaseOrderFindJpaRepository implements PurchaseOrderFindReposito
         // Execute query
         List<Tuple> tupleLst = em.createQuery(cq).getResultList();
         //
-        List<PurchaseOrderrDto> list = fromTupleToDto(tupleLst);
-        return list.get(0);
+        List<Order> list = fromTupleToOrder(tupleLst);
+        if (!list.isEmpty()) {
+            return Optional.ofNullable(list.get(0));
+        }
+        return Optional.empty();
     }
 
     private Predicate[] buildWhere(CriteriaBuilder cb, Join<PurchaseOrderPositionJpaEntity, PurchaseOrderJpaEntity> orderJoin, Long orderId) {
@@ -53,13 +59,13 @@ public class PurchaseOrderFindJpaRepository implements PurchaseOrderFindReposito
         return predicates.toArray(new Predicate[]{});
     }
 
-    private List<PurchaseOrderrDto> fromTupleToDto(List<Tuple> tupleLst) {
+    private List<Order> fromTupleToOrder(List<Tuple> tupleLst) {
         // multime id-uri de parinti distincte
         Set<Long> idsParent = new HashSet<>();
         // parinte curent
-        PurchaseOrderrDto parent = PurchaseOrderrDto.builder().build();
+        Order parent = Order.builder().build();
         // lista parinti de returnat
-        List<PurchaseOrderrDto> parents = new ArrayList<>();
+        List<Order> parents = new ArrayList<>();
         if (!tupleLst.isEmpty()) {
             for (Tuple tuple : tupleLst) {
                 // id parinte
@@ -71,11 +77,11 @@ public class PurchaseOrderFindJpaRepository implements PurchaseOrderFindReposito
                     // am parinte nou; adaug id parinte curent la multime id-uri parinte
                     idsParent.add(idParent);
                     // creez parinte curent
-                    parent = PurchaseOrderrDto.builder()
+                    parent = Order.builder()
                             .id(tuple.get(ORDER_ID, Long.class))
                             .amount(tuple.get(PurchaseOrderJpaEntity_.AMOUNT, BigDecimal.class))
                             .customerName(tuple.get(PurchaseOrderJpaEntity_.CUSTOMER_NAME, String.class))
-                            .state(tuple.get(PurchaseOrderJpaEntity_.STATE, PurchaseOrderState.class))
+                            .state(tuple.get(PurchaseOrderJpaEntity_.STATE, OrderState.class))
                             .build();
                     // adaug parinte curent lista parinti de returnat
                     parents.add(parent);
@@ -89,14 +95,14 @@ public class PurchaseOrderFindJpaRepository implements PurchaseOrderFindReposito
         return parents;
     }
 
-    private void addCopilLaParinte(Tuple tuple, PurchaseOrderrDto parinte) {
+    private void addCopilLaParinte(Tuple tuple, Order parinte) {
         // creez copil curent
-        PurchaseOrderPositionDto copil = PurchaseOrderPositionDto.builder()
+        OrderPosition copil = OrderPosition.builder()
                 .id(tuple.get(PurchaseOrderPositionJpaEntity_.ID, Long.class))
                 .bookId(tuple.get(PurchaseOrderPositionJpaEntity_.BOOK_ID, Long.class))
                 .quantity(tuple.get(PurchaseOrderPositionJpaEntity_.QUANTITY, Integer.class))
                 .build();
         // adaug copil la parinte curent
-        parinte.addOrderPosition(copil);
+        parinte.addPosition(copil);
     }
 }

@@ -10,7 +10,7 @@ import org.springframework.boot.context.properties.ConstructorBinding;
 @ConstructorBinding
 @ConfigurationProperties(value = "dcpm", ignoreUnknownFields = false)
 public class DcpmProperties {
-    private final String bookApiHost;
-    private final String orderApiHost;
-    private final String inventoryApiHost;
+    private final String bookApiPath;
+    private final String orderApiPath;
+    private final String inventoryApiPath;
 }

@@ -4,8 +4,8 @@ import org.mapstruct.AfterMapping;
 import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
 import org.mapstruct.MappingTarget;
-import ro.ilearn.dcpm.book.core.Author;
-import ro.ilearn.dcpm.book.core.Book;
+import ro.ilearn.dcpm.book.core.domain.Author;
+import ro.ilearn.dcpm.book.core.domain.Book;
 
 import java.util.Iterator;
 

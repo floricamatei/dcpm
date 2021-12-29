@@ -28,8 +28,8 @@
         <maven.compiler.source>17</maven.compiler.source>
         <maven.compiler.target>17</maven.compiler.target>
         <mapstruct.version>1.4.2.Final</mapstruct.version>
-        <springdoc-openapi-ui.version>1.6.0</springdoc-openapi-ui.version>
-        <spring-cloud-starter-openfeign.version>3.1.0</spring-cloud-starter-openfeign.version>
+        <springdoc-openapi-ui.version>1.6.3</springdoc-openapi-ui.version>
+        <spring-cloud.version>2021.0.0</spring-cloud.version>
     </properties>
 
     <dependencyManagement>
@@ -59,11 +59,13 @@
                 <artifactId>springdoc-openapi-ui</artifactId>
                 <version>${springdoc-openapi-ui.version}</version>
             </dependency>
-            <!-- spring-cloud-starter-openfeign -->
+            <!-- spring-cloud-dependencies -->
             <dependency>
                 <groupId>org.springframework.cloud</groupId>
-                <artifactId>spring-cloud-starter-openfeign</artifactId>
-                <version>${spring-cloud-starter-openfeign.version}</version>
+                <artifactId>spring-cloud-dependencies</artifactId>
+                <version>${spring-cloud.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
             </dependency>
         </dependencies>
     </dependencyManagement>

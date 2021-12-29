@@ -1,7 +1,7 @@
 package ro.ilearn.dcpm.review.adapter.web;
 
 import org.mapstruct.Mapper;
-import ro.ilearn.dcpm.review.core.Review;
+import ro.ilearn.dcpm.review.core.domain.Review;
 
 import java.util.List;
 
