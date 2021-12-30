@@ -5,8 +5,8 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import ro.ilearn.dcpm.orderinfo.core.domain.Book;
 
-@FeignClient(value = "book-client", url = "${dcpm.book-api-path}")
-public interface BookClient {
+@FeignClient(name = "book", url = "${dcpm.book-api-path}")
+public interface BookServiceClient {
     @GetMapping(path = "/{bookId}")
     Book getBook(@PathVariable("bookId") Long bookId);
 }

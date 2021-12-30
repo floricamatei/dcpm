@@ -13,11 +13,11 @@ import java.util.List;
 @RequiredArgsConstructor
 public class ReviewFinderFeignAdapter implements ReviewFinderPort {
     private final Logger logger = LoggerFactory.getLogger(ReviewFinderFeignAdapter.class);
-    private final ReviewClient reviewClient;
+    private final ReviewServiceClient reviewServiceClient;
 
     @Override
     public List<Review> getReviewsForBook(Long bookId) {
         logger.info("Calling REST endpoint of review service ...");
-        return reviewClient.getReviewsForBook(bookId);
+        return reviewServiceClient.getReviewsForBook(bookId);
     }
 }

@@ -11,12 +11,12 @@ import ro.ilearn.dcpm.orderinfo.core.port.InventoryFinderPort;
 @RequiredArgsConstructor
 public class InventoryFinderAdapter implements InventoryFinderPort {
     private final Logger logger = LoggerFactory.getLogger(InventoryFinderAdapter.class);
-    private final InventoryClient inventoryClient;
+    private final InventoryServiceClient inventoryServiceClient;
 
 
     @Override
     public int getInventory(Long bookId) {
         logger.info("Calling REST endpoint of inventory service ...");
-        return inventoryClient.getinventory(bookId);
+        return inventoryServiceClient.getinventory(bookId);
     }
 }

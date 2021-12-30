@@ -12,12 +12,12 @@ import ro.ilearn.dcpm.orderinfo.core.domain.PurchaseOrder;
 @RequiredArgsConstructor
 public class OrderFinderAdapter implements OrderFinderPort {
     private final Logger logger = LoggerFactory.getLogger(OrderFinderAdapter.class);
-    private final OrderClient orderClient;
+    private final OrderServiceClient orderServiceClient;
 
 
     @Override
     public PurchaseOrder getOrder(Long orderId) {
         logger.info("Calling REST endpoint of order service ...");
-        return orderClient.getOrder(orderId);
+        return orderServiceClient.getOrder(orderId);
     }
 }

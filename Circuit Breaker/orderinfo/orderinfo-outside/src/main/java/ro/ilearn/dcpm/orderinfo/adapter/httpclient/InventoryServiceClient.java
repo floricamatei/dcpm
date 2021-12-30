@@ -4,8 +4,8 @@ import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 
-@FeignClient(value = "inventory-client", url = "${dcpm.inventory-api-path}")
-public interface InventoryClient {
+@FeignClient(name = "inventory", url = "${dcpm.inventory-api-path}")
+public interface InventoryServiceClient {
     @GetMapping(path = "/book/{bookId}")
     int getinventory(@PathVariable("bookId") Long bookId);
 }

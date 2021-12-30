@@ -1,4 +1,4 @@
-package ro.ilearn.dcpm.inventory.core;
+package ro.ilearn.dcpm.inventory.core.domain;
 
 import lombok.Builder;
 import lombok.Getter;

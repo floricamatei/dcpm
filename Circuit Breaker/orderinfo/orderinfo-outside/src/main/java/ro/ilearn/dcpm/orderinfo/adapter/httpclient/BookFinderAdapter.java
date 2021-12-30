@@ -12,12 +12,12 @@ import ro.ilearn.dcpm.orderinfo.core.port.BookFinderPort;
 @RequiredArgsConstructor
 public class BookFinderAdapter implements BookFinderPort {
     private final Logger logger = LoggerFactory.getLogger(BookFinderAdapter.class);
-    private final BookClient bookClient;
+    private final BookServiceClient bookServiceClient;
 
 
     @Override
     public Book getBook(Long bookId) {
         logger.info("Calling REST endpoint of book service ...");
-        return bookClient.getBook(bookId);
+        return bookServiceClient.getBook(bookId);
     }
 }
