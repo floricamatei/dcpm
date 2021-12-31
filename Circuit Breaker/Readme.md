@@ -15,7 +15,7 @@ M-am inspirat / influentat din:
 
 Suntem in contextul aceleiasi aplicatii din prezentarea API Composition Pattern. Protocolul HTTP este utilizat la comunicarea intre microservicii. Deoarece este un protocol bazat pe cerere/raspuns sincron, dupa ce s-a trimis o cerere trebuie sa se astepte sa vina raspunsul. Uneori asta ar putea dura o perioada lunga de timp.
 
-![](F:\Proiecte\workspaces\dcpm\Circuit Breaker\context-problem.jpg)
+![](https://github.com/dgpavel/dcpm/blob/main/Circuit%20Breaker/context-problem.jpg)
 
 ### Circuit Breaker Pattern
 
