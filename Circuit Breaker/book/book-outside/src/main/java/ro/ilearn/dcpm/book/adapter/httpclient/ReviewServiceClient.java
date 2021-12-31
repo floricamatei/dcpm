@@ -7,8 +7,12 @@ import ro.ilearn.dcpm.book.core.domain.Review;
 
 import java.util.List;
 
-@FeignClient(name = "review",url = "${dcpm.review-api-path}")
+@FeignClient(
+        name = "review",
+        url = "${dcpm.review-api-path}",
+        fallbackFactory = ReviewServiceClientFallbackFactory.class)
 public interface ReviewServiceClient {
+
     @GetMapping(path = "/book/{bookId}")
     List<Review> getReviewsForBook(@PathVariable("bookId") Long bookId);
 }

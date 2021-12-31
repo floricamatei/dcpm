@@ -32,7 +32,11 @@ public class ReviewController {
                     content = {@Content(mediaType = "application/json", schema = @Schema(implementation = ReviewDto.class))})
     })
     @GetMapping(path = "/book/{bookId}")
-    public List<ReviewDto> getReviewsForBook(@PathVariable Long bookId) {
+    public List<ReviewDto> getReviewsForBook(@PathVariable Long bookId) throws InterruptedException {
+        if (logger.isInfoEnabled()) {
+            logger.info(String.format("Sleeping for 5000ms before returning reviews for book with id %d", bookId));
+        }
+        Thread.sleep(5000);
         logger.info("Done ... returning reviews now");
         return reviewDtoMapper.toReviewDto(viewReviewsForBookPort.execute(bookId));
     }
