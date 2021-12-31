@@ -7,8 +7,6 @@ M-am inspirat / influentat din:
 - cursul "Data and Communication Patterns for Microservices" a lui Thorben Janssen (https://thorben-janssen.com)
 - https://docs.microsoft.com/en-us/azure/architecture/patterns/circuit-breaker
 - https://medium.com/geekculture/design-patterns-for-microservices-circuit-breaker-pattern-276249ffab33
-- https://spring.io/projects/spring-cloud-circuitbreaker
-- https://resilience4j.readme.io/docs/feign
 - diagramele au fost realizate utilizand https://app.diagrams.net/
 
 ### Context si problema
