@@ -1,4 +1,4 @@
-package ro.ilearn.dcpm.orderinfo.adapter.httpclient;
+package ro.ilearn.dcpm.orderinfo.adapter.httpclient.inventory;
 
 import lombok.RequiredArgsConstructor;
 import org.slf4j.Logger;

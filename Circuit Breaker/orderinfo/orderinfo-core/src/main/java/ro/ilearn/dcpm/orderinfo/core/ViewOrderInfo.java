@@ -22,7 +22,7 @@ public class ViewOrderInfo implements ViewOrderInfoPort {
      * @param orderId the identifier of the order
      * @return the order info with the given identifier or throw NoSuchElementException if none found.
      * @throws IllegalArgumentException – if orderId is null.
-     * @throws NoSuchElementException - if order not found by given identifier
+     * @throws NoSuchElementException   - if order not found by given identifier
      */
     @Override
     public OrderInfo execute(Long orderId) {
@@ -36,15 +36,17 @@ public class ViewOrderInfo implements ViewOrderInfoPort {
                 .state(order.getState())
                 .build();
         List<OrderPosition> positions = new ArrayList<>();
-        for (PurchaseOrderPosition p : order.getPositions()) {
-            Book book = bookFinderPort.getBook(p.getBookId());
-            OrderPosition pos = OrderPosition.builder()
-                    .id(p.getId())
-                    .quantity(p.getQuantity())
-                    .book(book.getTitle() + " - " + book.getAuthors())
-                    .available(inventoryFinderPort.getInventory(book.getId()) >= p.getQuantity())
-                    .build();
-            positions.add(pos);
+        if (order.getPositions() != null) {
+            for (PurchaseOrderPosition p : order.getPositions()) {
+                Book book = bookFinderPort.getBook(p.getBookId());
+                OrderPosition pos = OrderPosition.builder()
+                        .id(p.getId())
+                        .quantity(p.getQuantity())
+                        .book(book.getTitle() + " - " + book.getAuthors())
+                        .available(inventoryFinderPort.getInventory(book.getId()) >= p.getQuantity())
+                        .build();
+                positions.add(pos);
+            }
         }
         info.addOrderPositions(positions);
         return info;

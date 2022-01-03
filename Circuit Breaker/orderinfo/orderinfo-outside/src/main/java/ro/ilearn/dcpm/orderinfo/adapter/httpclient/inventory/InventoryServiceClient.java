@@ -1,4 +1,4 @@
-package ro.ilearn.dcpm.orderinfo.adapter.httpclient;
+package ro.ilearn.dcpm.orderinfo.adapter.httpclient.inventory;
 
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.GetMapping;

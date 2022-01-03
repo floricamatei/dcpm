@@ -14,7 +14,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import ro.ilearn.dcpm.book.core.port.ViewBookWithReviewsPort;
 
-
 @RestController
 @RequestMapping(path = "/api/v1/books")
 @RequiredArgsConstructor
@@ -26,13 +25,19 @@ public class BookController {
 
     @Operation(summary = "Get a book by its id")
     @ApiResponses(value = {
-            @ApiResponse(
-                    responseCode = "200",
-                    description = "Found the book",
-                    content = {@Content(mediaType = "application/json", schema = @Schema(implementation = BookDto.class))})
+            @ApiResponse(responseCode = "200", description = "Found the book", content = {
+                    @Content(mediaType = "application/json", schema = @Schema(implementation = BookDto.class)) })
     })
     @GetMapping(path = "/{bookId}")
-    public BookDto getBook(@PathVariable Long bookId) {
+    public BookDto getBook(@PathVariable Long bookId) throws InterruptedException {
+
+        /*
+         * if (logger.isInfoEnabled()) {
+         * logger.info(String.
+         * format("Sleeping for 5000ms before returning book with id %d", bookId));
+         * }
+         * Thread.sleep(5000);
+         */
         logger.info("Done ... returning book now");
         return bookDtoMapper.toBookDto(viewBookWithReviewsPort.execute(bookId));
     }

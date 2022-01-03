@@ -2,7 +2,7 @@ package ro.ilearn.dcpm.configuration;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import ro.ilearn.dcpm.orderinfo.core.*;
+import ro.ilearn.dcpm.orderinfo.core.ViewOrderInfo;
 import ro.ilearn.dcpm.orderinfo.core.port.BookFinderPort;
 import ro.ilearn.dcpm.orderinfo.core.port.InventoryFinderPort;
 import ro.ilearn.dcpm.orderinfo.core.port.OrderFinderPort;

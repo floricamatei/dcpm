@@ -6,20 +6,21 @@ import org.springframework.cloud.client.circuitbreaker.Customizer;
 import org.springframework.cloud.openfeign.EnableFeignClients;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import ro.ilearn.dcpm.book.adapter.httpclient.ReviewServiceClient;
+import ro.ilearn.dcpm.orderinfo.adapter.httpclient.book.BookServiceClient;
+import ro.ilearn.dcpm.orderinfo.adapter.httpclient.inventory.InventoryServiceClient;
+import ro.ilearn.dcpm.orderinfo.adapter.httpclient.order.OrderServiceClient;
 
 import java.time.Duration;
 
 @Configuration
-@EnableFeignClients(clients = {ReviewServiceClient.class})
+@EnableFeignClients(clients = {BookServiceClient.class, InventoryServiceClient.class, OrderServiceClient.class})
 public class SpringCloudConfiguration {
-
     @Bean
     public Customizer<Resilience4JCircuitBreakerFactory> slowBackendCustomizer() {
         TimeLimiterConfig timeLimiterConfig = TimeLimiterConfig.custom()
                 .timeoutDuration(Duration.ofSeconds(8L)) // default = 1L
                 .build();
         return factory -> factory.configure(builder -> builder.timeLimiterConfig(timeLimiterConfig).build(),
-                "ReviewServiceClient#getReviewsForBook(Long)");
+                "BookServiceClient#getBook(Long)");
     }
 }
