@@ -44,4 +44,6 @@ Browser -> BookService -> ReviewService: Circuit Breaker - activat + ReviewServi
 
 ### Concluzii și întrebări
 
-- "Don’t Start With Microservices – Monoliths Are Your Friend" - https://arnoldgalovics.com/microservices-in-production/
+Merita efortul abordari arhitecturii bazate pe microservici?
+
+"Don’t Start With Microservices – Monoliths Are Your Friend" - https://arnoldgalovics.com/microservices-in-production/
