@@ -11,7 +11,7 @@ M-am inspirat / influentat din:
 
 ### Context si problema
 
-Suntem in contextul aceleiasi aplicatii din prezentarea API Composition Pattern. Protocolul HTTP este utilizat la comunicarea intre microservicii. Deoarece este un protocol bazat pe cerere/raspuns sincron, dupa ce s-a trimis o cerere trebuie sa se astepte sa vina raspunsul. Uneori asta ar putea dura o perioada lunga de timp.
+Suntem in contextul aceleiasi aplicatii din prezentarea API Composition Pattern. Protocolul HTTP este utilizat la comunicarea intre microservicii. Apelul catre un microserviciu este sincron. Dupa ce s-a trimis o cerere trebuie sa se astepte sa vina raspunsul. Uneori asta ar putea dura o perioada lunga de timp.
 
 ![](https://github.com/dgpavel/dcpm/blob/main/Circuit%20Breaker/context-problem.jpg)
 
