@@ -30,6 +30,7 @@
         <mapstruct.version>1.4.2.Final</mapstruct.version>
         <springdoc-openapi-ui.version>1.6.3</springdoc-openapi-ui.version>
         <spring-cloud.version>2021.0.0</spring-cloud.version>
+        <spotbugs-maven-plugin.version>4.5.2.0</spotbugs-maven-plugin.version>
     </properties>
 
     <dependencyManagement>
@@ -77,4 +78,16 @@
             <scope>test</scope>
         </dependency>
     </dependencies>
+
+    <build>
+        <pluginManagement>
+            <plugins>
+                <plugin>
+                    <groupId>com.github.spotbugs</groupId>
+                    <artifactId>spotbugs-maven-plugin</artifactId>
+                    <version>${spotbugs-maven-plugin.version}</version>
+                </plugin>
+            </plugins>
+        </pluginManagement>
+    </build>
 </project>

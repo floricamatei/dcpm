@@ -12,7 +12,7 @@
 
     <artifactId>orderinfo-core</artifactId>
     <description>The business rules / logic</description>
- 
+
     <dependencies>
         <!-- Lombok -->
         <dependency>
@@ -51,6 +51,11 @@
                         <!-- other annotation processors -->
                     </annotationProcessorPaths>
                 </configuration>
+            </plugin>
+            <!-- spotbugs -->
+            <plugin>
+                <groupId>com.github.spotbugs</groupId>
+                <artifactId>spotbugs-maven-plugin</artifactId>
             </plugin>
         </plugins>
     </build>
