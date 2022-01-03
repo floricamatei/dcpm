@@ -17,8 +17,8 @@ Suntem in contextul aceleiasi aplicatii din prezentarea API Composition Pattern.
 
 ### Circuit Breaker Pattern
 
-- am utilizat libraria resilience4j - https://spring.io/projects/spring-cloud-circuitbreaker
-- am utilizat libraria OpenFeign - https://spring.io/projects/spring-cloud-openfeign
+- am utilizat libraria resilience4j - https://github.com/resilience4j/resilience4j, https://spring.io/projects/spring-cloud-circuitbreaker
+- am utilizat libraria OpenFeign - https://github.com/OpenFeign/feign, https://spring.io/projects/spring-cloud-openfeign
 
 Browser -> BookService -> ReviewService: Circuit Breaker - dezactivat + ReviewService - oprit. Obtinem:
 
