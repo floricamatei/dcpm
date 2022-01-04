@@ -13,12 +13,12 @@ import ro.ilearn.dcpm.orderinfo.adapter.httpclient.order.OrderServiceClient;
 import java.time.Duration;
 
 @Configuration
-@EnableFeignClients(clients = {BookServiceClient.class, InventoryServiceClient.class, OrderServiceClient.class})
+@EnableFeignClients(clients = { BookServiceClient.class, InventoryServiceClient.class, OrderServiceClient.class })
 public class SpringCloudConfiguration {
     @Bean
     public Customizer<Resilience4JCircuitBreakerFactory> slowBackendCustomizer() {
         TimeLimiterConfig timeLimiterConfig = TimeLimiterConfig.custom()
-                .timeoutDuration(Duration.ofSeconds(8L)) // default = 1L
+                .timeoutDuration(Duration.ofSeconds(10L)) // default = 1L
                 .build();
         return factory -> factory.configure(builder -> builder.timeLimiterConfig(timeLimiterConfig).build(),
                 "BookServiceClient#getBook(Long)");
