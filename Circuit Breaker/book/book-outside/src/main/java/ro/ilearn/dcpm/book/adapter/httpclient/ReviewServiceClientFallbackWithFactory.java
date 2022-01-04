@@ -17,10 +17,6 @@ public class ReviewServiceClientFallbackWithFactory implements ReviewServiceClie
     @Override
     public List<Review> getReviewsForBook(Long bookId) {
         log.info(cause.getMessage(), cause);
-        return getReviewsForBookFallback();
-    }
-
-    private List<Review> getReviewsForBookFallback() {
         return new ArrayList<>();
     }
 

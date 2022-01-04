@@ -11,8 +11,8 @@ import java.util.List;
 
 @Component
 @RequiredArgsConstructor
-public class ReviewFinderFeignAdapter implements ReviewFinderPort {
-    private final Logger logger = LoggerFactory.getLogger(ReviewFinderFeignAdapter.class);
+public class ReviewFinderAdapter implements ReviewFinderPort {
+    private final Logger logger = LoggerFactory.getLogger(ReviewFinderAdapter.class);
     private final ReviewServiceClient reviewServiceClient;
 
     @Override

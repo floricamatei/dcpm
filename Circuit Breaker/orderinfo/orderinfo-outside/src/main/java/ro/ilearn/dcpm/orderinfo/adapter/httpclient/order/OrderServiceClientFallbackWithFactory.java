@@ -14,10 +14,6 @@ public class OrderServiceClientFallbackWithFactory implements OrderServiceClient
     @Override
     public PurchaseOrder getOrder(Long orderId) {
         log.info(cause.getMessage(), cause);
-        return getOrderFallback();
-    }
-
-    private PurchaseOrder getOrderFallback() {
         return PurchaseOrder.builder()
                 .id(-1L)
                 .build();

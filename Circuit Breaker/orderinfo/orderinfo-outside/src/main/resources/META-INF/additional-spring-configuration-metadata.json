@@ -1,0 +1,19 @@
+{
+    "properties": [
+        {
+            "name": "dcpm.inventory-api-path",
+            "type": "java.lang.String",
+            "description": "Rest Api Path for Inventory Service"
+        },
+        {
+            "name": "dcpm.order-api-path",
+            "type": "java.lang.String",
+            "description": "Rest Api Path for Order Service"
+        },
+        {
+            "name": "dcpm.book-api-path",
+            "type": "java.lang.String",
+            "description": "Rest Api Path for Book Service"
+        }
+    ]
+}

@@ -20,7 +20,8 @@ public class ViewOrderInfo implements ViewOrderInfoPort {
 
     /**
      * @param orderId the identifier of the order
-     * @return the order info with the given identifier or throw NoSuchElementException if none found.
+     * @return the order info with the given identifier or throw
+     *         NoSuchElementException if none found.
      * @throws IllegalArgumentException – if orderId is null.
      * @throws NoSuchElementException   - if order not found by given identifier
      */
@@ -39,10 +40,14 @@ public class ViewOrderInfo implements ViewOrderInfoPort {
         if (order.getPositions() != null) {
             for (PurchaseOrderPosition p : order.getPositions()) {
                 Book book = bookFinderPort.getBook(p.getBookId());
+                String titleAuthors = book.getTitle() != null ? book.getTitle() : "";
+                if (book.getAuthors() != null) {
+                    titleAuthors = titleAuthors + " - " + book.getAuthors();
+                }
                 OrderPosition pos = OrderPosition.builder()
                         .id(p.getId())
                         .quantity(p.getQuantity())
-                        .book(book.getTitle() + " - " + book.getAuthors())
+                        .book(titleAuthors)
                         .available(inventoryFinderPort.getInventory(book.getId()) >= p.getQuantity())
                         .build();
                 positions.add(pos);
