@@ -10,3 +10,4 @@ target/
 .vscode/
 Circuit Breaker.code-workspace
 API Composition.code-workspace
+Service-Discovery.code-workspace

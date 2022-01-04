@@ -1,0 +1,9 @@
+{
+    "properties": [
+        {
+            "name": "dcpm.review-api-path",
+            "type": "java.lang.String",
+            "description": "Rest Api Path for Review Service"
+        }
+    ]
+}
