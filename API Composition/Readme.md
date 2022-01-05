@@ -6,6 +6,7 @@ M-am inspirat / influentat din:
 
 - cursul "Data and Communication Patterns for Microservices" a lui Thorben Janssen (https://thorben-janssen.com).
 - diverse articole despre "Hexagonal Architecture".
+- https://www.twilio.com/blog/5-ways-to-make-http-requests-in-java
 - diagramele au fost realizate utilizand https://app.diagrams.net/
 
 ### Monoliths vs Microservices
