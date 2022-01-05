@@ -5,4 +5,5 @@
 M-am inspirat / influentat din:
 
 - cursul "Data and Communication Patterns for Microservices" a lui Thorben Janssen (https://thorben-janssen.com)
+- https://microservices.io/patterns/index.html
 - diagramele au fost realizate utilizand https://app.diagrams.net/
