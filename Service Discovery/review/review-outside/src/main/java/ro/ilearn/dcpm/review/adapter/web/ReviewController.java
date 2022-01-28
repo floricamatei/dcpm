@@ -28,15 +28,10 @@ public class ReviewController {
     @Operation(summary = "Get reviews of the book by its id")
     @ApiResponses(value = {
             @ApiResponse(responseCode = "200", content = {
-                    @Content(mediaType = "application/json", schema = @Schema(implementation = ReviewDto.class)) })
+                    @Content(mediaType = "application/json", schema = @Schema(implementation = ReviewDto.class))})
     })
     @GetMapping(path = "/book/{bookId}")
-    public List<ReviewDto> getReviewsForBook(@PathVariable Long bookId) throws InterruptedException {
-        /* if (logger.isInfoEnabled()) {
-            logger.info(String.format("Sleeping for 5000ms before returning reviews for book with id %d",
-                    bookId));
-        }
-        Thread.sleep(5000); */
+    public List<ReviewDto> getReviewsForBook(@PathVariable Long bookId) {
         logger.info("Done ... returning reviews now");
         return reviewDtoMapper.toReviewDto(viewReviewsForBookPort.execute(bookId));
     }

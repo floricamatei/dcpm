@@ -5,7 +5,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import ro.ilearn.dcpm.orderinfo.core.domain.Book;
 
-@FeignClient(name = "book", fallbackFactory = BookServiceClientFallbackFactory.class)
+@FeignClient(name = "book", fallback = BookServiceClientFallback.class)
 public interface BookServiceClient {
     @GetMapping(path = "/api/v1/books/{bookId}")
     Book getBook(@PathVariable("bookId") Long bookId);
