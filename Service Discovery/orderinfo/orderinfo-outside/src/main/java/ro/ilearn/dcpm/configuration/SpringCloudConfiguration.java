@@ -18,7 +18,7 @@ public class SpringCloudConfiguration {
     @Bean
     public Customizer<Resilience4JCircuitBreakerFactory> slowBackendCustomizer() {
         TimeLimiterConfig timeLimiterConfig = TimeLimiterConfig.custom()
-                .timeoutDuration(Duration.ofSeconds(1L)) // default = 1L
+                .timeoutDuration(Duration.ofSeconds(6L)) // default = 1L
                 .build();
         return factory -> factory.configure(builder -> builder.timeLimiterConfig(timeLimiterConfig).build(),
                 "BookServiceClient#getBook(Long)");
