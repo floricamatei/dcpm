@@ -1,0 +1,29 @@
+server:
+  port: 6060
+spring:
+  application:
+    name: book
+  jpa:
+    open-in-view: false
+  datasource:
+    url: jdbc:postgresql://localhost:5432/book
+    username: postgres
+    password: postgres
+  cloud:
+    zookeeper:
+      connect-string: localhost:2181
+feign:
+  circuitbreaker:
+    enabled: true
+logging:
+  level:
+    ro:
+      ilearn:
+        dcpm: INFO
+    org:
+      hibernate:
+        SQL: DEBUG
+        type:
+          descriptor:
+            sql:
+              BasicBinder: TRACE

@@ -36,7 +36,7 @@ public class ReviewController {
             logger.info(String.format("Sleeping for 4000ms before returning reviews for book with id %d", bookId));
         }
         Thread.sleep(4000);
-        logger.info("Done ... returning reviews now - 5050");
+        logger.info("Done ... returning reviews now - 5051");
         return reviewDtoMapper.toReviewDto(viewReviewsForBookPort.execute(bookId));
     }
 }

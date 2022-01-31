@@ -18,6 +18,8 @@
     <modules>
         <module>review-core</module>
         <module>review-outside</module>
+		<module>review-outside-unu</module>
+		<module>review-outside-doi</module>
     </modules>
 
     <properties>
