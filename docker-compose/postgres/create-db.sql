@@ -1,7 +1,7 @@
 --
 -- Create database for order service
 --
-CREATE DATABASE order;
+CREATE DATABASE "order";
 --
 -- Create database for book service
 --
